@@ -341,66 +341,137 @@
   }
 }
 
+/* MOBILE RESPONSIVE */
 @media (max-width: 780px) {
   .kte-page {
-    padding: 15px;
+    width: 100%;
+    min-height: 100svh;
+    padding: 12px;
+    place-items: start center;
   }
 
   .kte-shell {
+    width: 100%;
+    max-width: 100%;
     grid-template-columns: 1fr;
-    border-radius: 25px;
+    border-radius: 22px;
+  }
+
+  .kte-copy,
+  .kte-visual {
+    min-width: 0;
   }
 
   .kte-copy {
-    padding: 34px 22px;
+    padding: 28px 17px 24px;
     text-align: center;
   }
 
   .kte-badge {
-    margin: 0 auto 18px;
+    max-width: 100%;
+    margin: 0 auto 15px;
+    padding: 7px 11px;
+    font-size: 10px;
+    letter-spacing: 1.1px;
+    white-space: normal;
   }
 
   .kte-title {
-    font-size: clamp(42px, 13vw, 58px) !important;
-    letter-spacing: -3px !important;
+    max-width: 100%;
+    font-size: clamp(36px, 11.5vw, 50px) !important;
+    letter-spacing: -2.2px !important;
+    line-height: 1 !important;
+    overflow-wrap: anywhere;
   }
 
   .kte-text {
-    margin: 18px auto 0;
-    font-size: 15px;
+    max-width: 420px;
+    margin: 15px auto 0;
+    font-size: 13px;
+    line-height: 1.6;
   }
 
   .kte-features {
+    margin-top: 18px;
     justify-content: center;
+    gap: 7px;
+  }
+
+  .kte-chip {
+    padding: 7px 9px;
+    font-size: 10px;
   }
 
   .kte-cta {
     width: 100%;
-    margin-top: 26px;
+    max-width: 420px;
+    min-height: 50px;
+    margin: 21px auto 0;
+    padding: 13px 15px;
+    font-size: 12px;
   }
 
   .kte-visual {
     min-height: auto;
-    padding: 30px 22px 38px;
+    padding: 23px 17px 27px;
   }
 
   .kte-logo-card {
-    width: min(270px, 100%);
+    width: min(250px, 100%);
+    padding: 24px 18px;
+    border-radius: 22px;
     transform: none;
   }
 
   .kte-logo {
-    width: 105px;
-    height: 105px;
-    border-radius: 27px;
-    font-size: 36px;
+    width: 82px;
+    height: 82px;
+    margin-bottom: 17px;
+    border-radius: 22px;
+    font-size: 30px;
+  }
+
+  .kte-logo-card h2 {
+    font-size: 20px !important;
+  }
+
+  .kte-logo-card p {
+    margin-top: 8px;
+    font-size: 11px;
+    line-height: 1.5;
   }
 
   .kte-notice {
-    padding: 15px 18px;
+    padding: 13px 14px;
     flex-direction: column;
     text-align: center;
-    gap: 7px;
+    gap: 6px;
+    font-size: 10px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 380px) {
+  .kte-page {
+    padding: 8px;
+  }
+
+  .kte-copy {
+    padding: 24px 13px 21px;
+  }
+
+  .kte-title {
+    font-size: 34px !important;
+    letter-spacing: -1.8px !important;
+  }
+
+  .kte-chip {
+    padding: 6px 8px;
+    font-size: 9px;
+  }
+
+  .kte-visual {
+    padding: 20px 13px 24px;
   }
 }
 </style>
@@ -469,12 +540,14 @@
     </div>
 
     <div class="kte-notice">
+
       <span>
         18+ only · Trading involves risk. Content is for educational
         purposes and is not financial advice.
       </span>
 
       <strong>ADS BY FLOX ADS</strong>
+
     </div>
 
   </div>
