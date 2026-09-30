@@ -1,319 +1,245 @@
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
 
-.kte-page,
-.kte-page * {
+#kte-mobile,
+#kte-mobile * {
   box-sizing: border-box;
 }
 
-.kte-page {
+#kte-mobile {
   --green: #20d49a;
   --gold: #f2d27a;
   position: relative;
-  isolation: isolate;
-  width: 100%;
-  min-height: 100vh;
-  min-height: 100svh;
-  padding: 12px;
-  display: grid;
-  place-items: start center;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
   overflow: hidden;
   color: #fff;
-  background:
-    radial-gradient(circle at 12% 16%,rgba(32,212,154,.17),transparent 30%),
-    radial-gradient(circle at 88% 84%,rgba(242,210,122,.12),transparent 28%),
-    linear-gradient(145deg,#030706 0%,#071511 52%,#060908 100%);
-  font-family: "Poppins",sans-serif;
+  background: #030706;
+  font-family: "Poppins", sans-serif;
 }
 
-.kte-page::before {
+#kte-mobile .kte-phone {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: 450px;
+  min-height: 100svh;
+  min-height: max(100svh, 177.778vw);
+  margin: 0 auto;
+  padding: 26px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(32,212,154,.18), transparent 40%),
+    radial-gradient(circle at 90% 85%, rgba(242,210,122,.13), transparent 40%),
+    linear-gradient(155deg, #030706, #071511 55%, #060908);
+}
+
+#kte-mobile .kte-phone::before {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: -3;
-  opacity: .22;
+  z-index: -1;
   background-image:
-    linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
-  background-size: 46px 46px;
-  mask-image: linear-gradient(to bottom,#000,transparent 95%);
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 35px 35px;
 }
 
-.kte-glow {
+#kte-mobile .kte-glow {
   position: absolute;
-  z-index: -2;
-  width: 300px;
-  height: 300px;
+  z-index: -1;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
-  filter: blur(95px);
-  background: rgba(32,212,154,.19);
-  animation: kteFloat 8s ease-in-out infinite alternate;
+  filter: blur(65px);
+  background: rgba(32,212,154,.2);
+  top: -90px;
+  right: -80px;
+  animation: kteFloat 7s ease-in-out infinite alternate;
 }
 
-.kte-glow.one {
-  top: -170px;
-  right: -110px;
-}
-
-.kte-glow.two {
-  bottom: -190px;
-  left: -130px;
-  background: rgba(242,210,122,.12);
-  animation-delay: -4s;
-}
-
-.kte-shell {
-  width: 100%;
-  max-width: 460px;
-  min-width: 0;
-  display: grid;
-  grid-template-columns: minmax(0,1fr);
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 22px;
-  background: rgba(9,20,17,.88);
-  box-shadow:
-    0 34px 90px rgba(0,0,0,.58),
-    inset 0 1px rgba(255,255,255,.07);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  animation: kteIn .75s ease both;
-}
-
-.kte-copy {
-  min-width: 0;
-  padding: 28px 17px 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-
-.kte-badge {
-  width: fit-content;
+#kte-mobile .kte-badge {
   max-width: 100%;
-  margin: 0 auto 15px;
+  margin: 0 0 22px;
   padding: 7px 11px;
-  border: 1px solid rgba(32,212,154,.32);
+  border: 1px solid rgba(32,212,154,.35);
   border-radius: 999px;
   color: #a9f3d9;
   background: rgba(32,212,154,.07);
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
-  letter-spacing: 1.1px;
+  letter-spacing: 1px;
   line-height: 1.5;
   text-transform: uppercase;
-  white-space: normal;
 }
 
-.kte-title {
-  max-width: 100%;
+#kte-mobile .kte-logo {
+  flex-shrink: 0;
+  width: 82px;
+  height: 82px;
+  margin: 0 0 21px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.5);
+  border-radius: 23px;
+  color: #06110e;
+  background: linear-gradient(135deg, #f2d27a, #fff1bb 40%, #20d49a);
+  box-shadow: 0 12px 35px rgba(32,212,154,.2);
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+#kte-mobile h1 {
+  width: 100%;
   margin: 0 !important;
   color: #fff !important;
-  font-family: "Poppins",sans-serif !important;
-  font-size: clamp(30px,10vw,46px) !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: clamp(32px, 10vw, 44px) !important;
   font-weight: 900 !important;
-  letter-spacing: -1.8px !important;
-  line-height: 1.08 !important;
-  text-transform: uppercase;
-  overflow-wrap: break-word;
+  letter-spacing: -1px !important;
+  line-height: 1.1 !important;
+  text-align: center !important;
 }
 
-.kte-title span {
+#kte-mobile h1 span {
   display: block;
-  color: transparent;
-  background: linear-gradient(100deg,var(--green),#a5f6dc 50%,var(--gold));
+  color: #20d49a;
+  background: linear-gradient(100deg, #20d49a, #a5f6dc, #f2d27a);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.kte-text {
-  max-width: 420px;
-  margin: 15px auto 0;
+#kte-mobile .kte-text {
+  width: 100%;
+  max-width: 340px;
+  margin: 17px 0 0;
   color: #aabbb5;
-  font-size: 13px;
-  line-height: 1.6;
+  font-size: 12px;
+  line-height: 1.7;
 }
 
-.kte-features {
-  margin-top: 18px;
+#kte-mobile .kte-features {
+  width: 100%;
+  margin: 19px 0 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 7px;
+  gap: 6px;
 }
 
-.kte-chip {
-  padding: 7px 9px;
-  border: 1px solid rgba(255,255,255,.1);
+#kte-mobile .kte-chip {
+  padding: 6px 8px;
+  border: 1px solid rgba(255,255,255,.12);
   border-radius: 999px;
-  color: #dbe7e3;
   background: rgba(255,255,255,.035);
-  font-size: 10px;
+  color: #dbe7e3;
+  font-size: 9px;
   font-weight: 600;
   line-height: 1.5;
 }
 
-.kte-cta {
+#kte-mobile .kte-cta {
   position: relative;
+  flex-shrink: 0;
   width: 100%;
-  max-width: 420px;
-  min-height: 50px;
-  margin: 21px auto 0;
-  padding: 13px 12px;
-  display: inline-flex;
+  max-width: 340px;
+  min-height: 52px;
+  margin: 24px 0 0;
+  padding: 14px 10px;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,.44);
+  border: 1px solid rgba(255,255,255,.4);
   border-radius: 14px;
+  background: linear-gradient(105deg, #20d49a, #79edc8 52%, #f2d27a);
   color: #04110d !important;
-  background: linear-gradient(105deg,var(--green),#79edc8 52%,var(--gold));
-  box-shadow: 0 16px 35px rgba(32,212,154,.2);
-  font-family: "Poppins",sans-serif;
+  box-shadow: 0 12px 30px rgba(32,212,154,.23);
+  font-family: "Poppins", sans-serif !important;
   font-size: 12px;
   font-weight: 800;
   line-height: 1.5;
-  letter-spacing: .3px;
   text-decoration: none !important;
   text-transform: uppercase;
-  transition: .25s ease;
 }
 
-.kte-cta::before {
+#kte-mobile .kte-cta::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 52%;
-  height: 100%;
+  inset: 0 auto 0 -100%;
+  width: 50%;
   transform: skewX(-25deg);
-  background: linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);
-  animation: kteShine 3.1s ease-in-out infinite;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.5), transparent);
+  animation: kteShine 3.1s infinite;
 }
 
-.kte-cta:hover {
-  color: #04110d !important;
-  transform: translateY(-3px);
-  box-shadow: 0 20px 45px rgba(32,212,154,.32);
+#kte-mobile .kte-cta svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
 
-.kte-cta svg,
-.kte-cta span {
+#kte-mobile .kte-cta svg,
+#kte-mobile .kte-cta span {
   position: relative;
   z-index: 1;
 }
 
-.kte-cta svg {
-  width: 21px;
-  height: 21px;
-  flex-shrink: 0;
-}
-
-.kte-visual {
-  position: relative;
-  min-width: 0;
-  min-height: auto;
-  padding: 23px 17px 27px;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  background: linear-gradient(145deg,rgba(32,212,154,.06),rgba(242,210,122,.035));
-}
-
-.kte-visual::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    transparent 15%,
-    rgba(255,255,255,.04) 15.2%,
-    transparent 15.5%,
-    transparent 58%,
-    rgba(32,212,154,.09) 58.2%,
-    transparent 58.5%
-  );
-}
-
-.kte-logo-card {
-  position: relative;
+#kte-mobile .kte-learning {
   width: 100%;
-  max-width: 250px;
-  padding: 24px 18px;
-  text-align: center;
-  border: 1px solid rgba(242,210,122,.25);
-  border-radius: 22px;
-  background: rgba(3,11,9,.74);
-  box-shadow:
-    0 25px 65px rgba(0,0,0,.45),
-    0 0 50px rgba(32,212,154,.08);
+  max-width: 340px;
+  margin-top: 23px;
+  padding: 16px 12px;
+  border: 1px solid rgba(242,210,122,.2);
+  border-radius: 16px;
+  background: rgba(3,11,9,.65);
 }
 
-.kte-logo {
-  width: 82px;
-  height: 82px;
-  margin: 0 auto 17px;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(255,255,255,.5);
-  border-radius: 22px;
-  color: #06110e;
-  background: linear-gradient(135deg,var(--gold),#fff1bb 40%,var(--green));
-  box-shadow: 0 16px 38px rgba(32,212,154,.2);
-  font-size: 30px;
-  font-weight: 900;
-  letter-spacing: -3px;
-}
-
-.kte-logo-card h2 {
+#kte-mobile .kte-learning h2 {
   margin: 0 !important;
   color: #fff !important;
-  font-family: "Poppins",sans-serif !important;
-  font-size: 20px !important;
-  line-height: 1.2 !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 17px !important;
+  line-height: 1.4 !important;
 }
 
-.kte-logo-card p {
+#kte-mobile .kte-learning p {
   margin: 8px 0 0;
   color: #8fa59e;
-  font-size: 11px;
-  line-height: 1.5;
-}
-
-.kte-notice {
-  min-width: 0;
-  padding: 13px 14px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  text-align: center;
-  border-top: 1px solid rgba(255,255,255,.08);
-  color: #7f918b;
-  background: rgba(0,0,0,.16);
   font-size: 10px;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-.kte-notice strong {
+#kte-mobile .kte-notice {
+  max-width: 340px;
+  margin-top: 22px;
+  color: #7f918b;
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+#kte-mobile .kte-footer {
+  margin-top: 12px;
   color: #cdd8d4;
+  font-size: 10px;
+  font-weight: 700;
   letter-spacing: 1.5px;
 }
 
-@keyframes kteIn {
-  from { opacity: 0; transform: translateY(24px) scale(.985); }
-  to { opacity: 1; transform: none; }
-}
-
 @keyframes kteFloat {
-  from { transform: translate3d(0,0,0) scale(1); }
-  to { transform: translate3d(30px,24px,0) scale(1.13); }
+  to { transform: translate(-25px, 30px); }
 }
 
 @keyframes kteShine {
@@ -321,82 +247,93 @@
   85%,100% { left: 150%; }
 }
 
-@media (max-width:380px) {
-  .kte-page { padding: 8px; }
-  .kte-copy { padding: 24px 13px 21px; }
-  .kte-title { font-size: 32px !important; letter-spacing: -1.5px !important; }
-  .kte-chip { padding: 6px 8px; font-size: 9px; }
-  .kte-visual { padding: 20px 13px 24px; }
+@media (min-width: 451px) {
+  #kte-mobile .kte-phone {
+    min-height: 800px;
+  }
+}
+
+@media (max-width: 350px) {
+  #kte-mobile .kte-phone {
+    padding: 22px 14px 16px;
+  }
+
+  #kte-mobile h1 {
+    font-size: 32px !important;
+  }
+
+  #kte-mobile .kte-chip {
+    font-size: 8px;
+    padding: 6px 7px;
+  }
 }
 </style>
 
-<section class="kte-page">
-  <div class="kte-glow one"></div>
-  <div class="kte-glow two"></div>
+<section id="kte-mobile">
+  <div class="kte-phone">
+    <div class="kte-glow"></div>
 
-  <div class="kte-shell">
-    <div class="kte-copy">
-      <p class="kte-badge">Official Telegram Community</p>
+    <p class="kte-badge">Official Telegram Community</p>
 
-      <h1 class="kte-title">
-        KARAN <span>TRADING EXPERT</span>
-      </h1>
+    <div class="kte-logo">KT</div>
 
-      <p class="kte-text">
-        Learn with the community through educational market insights,
-        practical trading discussions and regular updates.
-      </p>
+    <h1>
+      KARAN
+      <span>TRADING</span>
+      <span>EXPERT</span>
+    </h1>
 
-      <div class="kte-features">
-        <span class="kte-chip">Market Education</span>
-        <span class="kte-chip">Trading Insights</span>
-        <span class="kte-chip">Community Updates</span>
-      </div>
+    <p class="kte-text">
+      Learn with the community through educational market insights,
+      practical trading discussions and regular updates.
+    </p>
 
-      <a class="kte-cta"
-         href="https://t.me/+VdfHJ8NBJQJjZTY9"
-         target="_blank"
-         rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M21.55 3.24a1.45 1.45 0 0 0-1.48-.2L2.86 9.69c-1.18.46-1.16 1.16-.21 1.45l4.42 1.38 10.23-6.45c.48-.3.93-.14.56.19l-8.29 7.48-.32 4.39c.46 0 .66-.21.92-.46l2.12-2.06 4.41 3.26c.81.45 1.4.22 1.6-.75L21 5.38c.27-1.22-.12-1.8.55-2.14Z"/>
-        </svg>
-        <span>Join Telegram Channel</span>
-      </a>
+    <div class="kte-features">
+      <span class="kte-chip">Market Education</span>
+      <span class="kte-chip">Trading Insights</span>
+      <span class="kte-chip">Community Updates</span>
     </div>
 
-    <div class="kte-visual">
-      <div class="kte-logo-card">
-        <div class="kte-logo">KT</div>
-        <h2>Build Skills.<br>Trade Responsibly.</h2>
-        <p>
-          Community learning for people interested in understanding
-          the markets.
-        </p>
-      </div>
+    <a class="kte-cta"
+       href="https://t.me/+VdfHJ8NBJQJjZTY9"
+       target="_blank"
+       rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M21.55 3.24a1.45 1.45 0 0 0-1.48-.2L2.86 9.69c-1.18.46-1.16 1.16-.21 1.45l4.42 1.38 10.23-6.45c.48-.3.93-.14.56.19l-8.29 7.48-.32 4.39c.46 0 .66-.21.92-.46l2.12-2.06 4.41 3.26c.81.45 1.4.22 1.6-.75L21 5.38c.27-1.22-.12-1.8.55-2.14Z"/>
+      </svg>
+      <span>Join Telegram Channel</span>
+    </a>
+
+    <div class="kte-learning">
+      <h2>Build Skills.<br>Trade Responsibly.</h2>
+      <p>
+        Community learning for people interested in understanding
+        the markets.
+      </p>
     </div>
 
     <div class="kte-notice">
-      <span>
-        18+ only · Trading involves risk. Content is for educational
-        purposes and is not financial advice.
-      </span>
-      <strong>ADS BY FLOX ADS</strong>
+      18+ only · Trading involves risk. Content is for educational
+      purposes and is not financial advice.
     </div>
+
+    <div class="kte-footer">ADS BY FLOX ADS</div>
   </div>
 </section>
 
 <script>
 (function () {
-  var viewports = document.querySelectorAll('meta[name="viewport"]');
-  if (viewports.length) {
-    viewports.forEach(function (viewport) {
-      viewport.setAttribute("content", "width=device-width, initial-scale=1");
-    });
+  var tags = document.querySelectorAll('meta[name="viewport"]');
+
+  if (!tags.length) {
+    var tag = document.createElement("meta");
+    tag.name = "viewport";
+    tag.content = "width=device-width, initial-scale=1";
+    document.head.appendChild(tag);
   } else {
-    var viewport = document.createElement("meta");
-    viewport.name = "viewport";
-    viewport.content = "width=device-width, initial-scale=1";
-    document.head.appendChild(viewport);
+    tags.forEach(function (tag) {
+      tag.content = "width=device-width, initial-scale=1";
+    });
   }
 })();
 </script>
